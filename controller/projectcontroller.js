@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const axios = require('axios');
+require('dotenv').config();
 const render_homepage=(req,res)=>{
     res.render('home.ejs')
 }
@@ -35,7 +36,7 @@ const render_ml_response = async (req, res) => {
         };
 
         // Send post req to url using axios
-        const response = await axios.post('https://skill-fit-job-match.onrender.com', data);
+        const response = await axios.post(process.env.ML_API, data);
 
         // Log the response data
         //  console.log(response.data[0].percentage);

@@ -4,10 +4,10 @@ const morgan = require('morgan');
 const ejs = require('ejs');
 const projectRoutes = require('./routes/projectroutes');
 const xss = require('xss-clean');
-
 const app = express();
+require('dotenv').config();
 const PORT = process.env.PORT ||3000 ;
-const dbURI = 'mongodb+srv://shaun:amandubey123@nodetuts.eswobdi.mongodb.net/project?retryWrites=true&w=majority';  // Update with your MongoDB URI
+const dbURI = process.env.DB_URL  // Update with your MongoDB URI
 
 // Connect to MongoDB
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
