@@ -1,0 +1,99 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+    <div class="about-container">
+        <h1>About Our Project</h1><br>
+        <p>SkillHunt is a  Job Qualification Analytics platform, a comprehensive tool designed to help job seekers and employers navigate the dynamic job market. Our platform provides insights into the qualifications and skills required for various job roles based on current job postings, offering valuable data to both individuals looking to enhance their career prospects and companies seeking the right talent.</p>
+        
+        <h2>Components of Our Platform</h2><br>
+        
+        <h3>SkillWind</h3>
+        <p>SkillWind is a powerful analytics tool that provides detailed information on the skills in demand across various roles in different companies. It helps users understand the spread and concentration of specific skills across job postings nationwide, giving a clear picture of which qualifications are most sought after by employers. Key features of SkillWind include:</p>
+        <ul>
+            <li><strong>Skills Demand Analysis:</strong> Understand which skills are highly valued for different roles and industries.</li>
+            <li><strong>Geographical Spread:</strong> Visualize the distribution of job positions across India, helping you identify hotspots for specific roles.</li>
+            <li><strong>Role-Specific Insights:</strong> Gain detailed insights into the qualifications needed for particular roles, making it easier to tailor your skills to meet market demands.</li>
+        </ul>
+        
+        <h3>SkillFit</h3>
+        <p>SkillFit is an interactive component that matches user-inputted skills with the roles that best fit those qualifications. This tool is designed to assist job seekers in identifying the job roles that align most closely with their skill sets. Currently, SkillFit supports seven primary roles, with plans to expand and include additional roles in future updates.SkillFit is a machine learning engine that works on content-based filtering to find the cosine distance between user skills and relevant skills in our dataset. This engine suggests the top roles that most appropriately fit the user's skills. Key features of SkillFit include:</p><br>
+        <ul>
+            <li><strong>Personalized Role Recommendations:</strong> Input your skills and receive recommendations for job roles that match your qualifications.</li>
+            <li><strong>Current Roles:</strong> SkillFit currently supports the following seven roles:
+                <ol>
+                    <li>Data Scientist</li>
+                    <li>Data Analyst</li>
+                    <li>Data Engineer</li>
+                    <li>Machine Learning Engineer</li>
+                    <li>Devops Engineer</li>
+                    <li>Frontend Engineer</li>
+                    <li>Backend Engineer</li>
+                </ol>
+            </li>
+           
+        </ul>
+        
+        <h2>Our Vision</h2>
+        <p>Our vision is to bridge the gap between job seekers and employers by providing actionable insights into job qualifications and market trends. By leveraging the data from job postings, we aim to empower individuals with the knowledge they need to succeed in their careers and help companies find the best-suited candidates for their needs.</p>
+        
+        <h2>Data Pipeline and Updates</h2>
+        <p>To ensure that our platform remains current with the continuously changing job skills landscape, we are implementing a robust data pipeline. Our plan is to update the database once every month, allowing us to keep pace with the latest trends and requirements in the job market. This regular update cycle will help us provide the most accurate and relevant insights to our users.</p>
+        <p>This process includes:</p>
+<ul>
+    <li><strong>Data Collection:</strong> Gather job postings data from multiple sources.</li>
+    <li><strong>Data Preprocessing:</strong> Clean, transform, and extract relevant features from the collected data.</li>
+    <li><strong>Data Analysis:</strong> Analyze the preprocessed data to derive insights into skills demand, geographical trends, and role-specific qualifications.</li>
+    <li><strong>Database Update:</strong> Integrate the analyzed data into our MongoDB database, updating each job role's collection accordingly.</li>
+</ul>
+        
+        <p>Stay tuned for more updates and new features as we strive to enhance our platform and provide even more value to our users.</p>
+    </div>
+</main>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-y:scroll;
+    }
+    .about-container {
+        max-width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+        color: black;
+    }
+    p {
+        line-height: 1.6;
+        color: black;
+    }
+    ul {
+        margin-left: 20px;
+        color: black;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+    ol {
+        margin-left: 20px;
+        color: black;
+   
+    }
+    ol li {
+        margin-bottom: 10px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: black;
+    }
+    @media screen and (max-width:800px)
+{
+    .about-container {
+        max-width: auto;
+    }
+}
+</style>

@@ -1,0 +1,89 @@
+<!-- views/partials/dropdown.ejs -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Material Icons stylesheet -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Any other meta tags, title, or stylesheets -->
+</head>
+<body>
+    <div class="Dropdown">
+        <div class="input-field">
+            <select id="roleSelect" autofocus>
+                <option value="" selected disabled>Select Role</option>
+                <% roles.forEach(role => { %>
+                    <option value="/skill_hunt/skill_wind/<%= encodeURIComponent(role.reference) %>/<%= encodeURIComponent(role.locdata) %>">
+                        <%= role.role %>
+                    </option>
+                <% }); %>
+            </select>
+           <!-- Example usage -->
+<i class="fas fa-angle-down"></i>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdown = document.getElementById('roleSelect');
+
+
+            dropdown.addEventListener('change', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                var selectedRoleName = this.value;
+                console.log(selectedRoleName);
+                if (selectedRoleName) {
+                    window.location.href = `${selectedRoleName}`;
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .Dropdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Adjust margin-top for vertical positioning */
+        }
+
+        .input-field {
+            position: relative; /* Ensure relative positioning */
+            width: 80%; /* Adjust width as needed */
+            margin: 0 auto; /* Center horizontally */
+            text-align: center; /* Center contents */
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 4px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,#1D976C,#93F9B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D976C,#93F9B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            cursor: pointer;
+            color:black;
+            font-weight: bold;
+        }
+
+        .fa-angle-down {
+        position: absolute;
+        right: 10px; /* Adjust the position of the icon */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust vertical alignment */
+        color: #555; /* Icon color */
+    }
+    option{
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    </style>
+</body>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.container2 {
+    background: linear-gradient(179.1deg, rgb(43, 170, 96) 2.3%, rgb(129, 204, 104) 98.3%);
+    width: 600px;
+    padding: 25px 30px;
+    margin: 50px auto 0;
+    border-top: 5px solid #196F3D;
+    box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    height: auto;
+    margin-top: 40px;
+    align-content: center;
+    align-self: center;
+}
+
+.container2 h1 {
+    font-size: 35px;
+    font-weight: 500;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 5px;
+    color: white;
+    width: 100%;
+}
+
+.skill-user {
+    margin-top: 20px;
+    padding: 2px;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill label {
+    display: inline-flex;
+    font-weight: 1000;
+    margin-bottom: 10px;
+    color: white;
+    margin-bottom: 5px;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container2 .skill input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:whitesmoke;
+}
+.container2 .skill ::placeholder{
+    color: #848884;
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.submit-button input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0b510e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button input[type="submit"]:hover {
+    background-color: #45a049;
+}

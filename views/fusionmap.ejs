@@ -1,0 +1,83 @@
+<script>
+        // Wait for the DOM to load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Simulated received data
+            var receivedData = [
+                <% locations.forEach(function(location) { %>
+                    <% if (location.percentage > 0) { %>
+                        {
+                            state_id: '<%= location.state_id %>',
+                            percentage: <%= location.percentage %>
+                        },
+                    <% } %>
+                <% }); %>
+            ];
+
+            // Debugging: Log the received data to the console
+            console.log("Received Data:", receivedData);
+
+            // Convert received data into desired format
+            var formattedData = receivedData.map(item => ({
+                id: item.state_id, 
+                value: item.percentage,
+                showLabel: "0"
+            }));
+
+            // Debugging: Log the formatted data to the console
+            console.log("Formatted Data:", formattedData);
+
+            // Create FusionCharts map instance
+            var map = new FusionCharts({
+                type: 'maps/india',
+                renderAt: 'map',
+                width: "90%",
+                height: "750",
+                dataFormat: 'json',
+                dataSource: {
+                  "chart": {
+                        "caption": "Spread of <%= roleName %> Position Across India",
+                        "caption position":"top-center",
+                        "captionFontSize": "28",
+                        "hoverOnEmpty":"0",
+                        "showCanvasBorder":"0",
+                        "theme": "fusion",
+                        "labelFontColor": "#17202A",
+                        "captionFontColor": "#17202A",
+                        "numberSuffix": "%",
+                        "showBorder": "0",
+                        "borderColor": "#666666",
+                        "borderThickness": "1",
+                        "showLegend":"0",
+                        "baseFont":"roboto mono",
+                        "exportEnabled":"0",
+                        "responsive":"1",
+                        "captionFont": "Arial",
+                      
+                        
+
+                    },
+                    "colorrange": {
+                        "minvalue": "0",
+                        "code": "#FFE0B2",
+                        "gradient": "1",
+                        "color": [
+                            { "minvalue": "0", "maxvalue": "1", "color": "#ABEBC6" },
+                            { "minvalue": "1", "maxvalue": "5", "color": "#7DCEA0" },
+                            { "minvalue": "5", "maxvalue": "10", "color": "#52BE80" },
+                            { "minvalue": "10", "maxvalue": "20", "color": "#27AE60" },
+                            { "minvalue": "20", "maxvalue": "30", "color": "#229954" },
+                            { "minvalue": "30", "maxvalue": "40", "color": "#1E8449" },
+                            { "minvalue": "40", "maxvalue": "50", "color": "#196F3D" },
+                            { "minvalue": "50", "maxvalue": "60", "color": "#145A32" },
+                            { "minvalue": "60", "maxvalue": "70", "color": "#008000" }
+                        ]
+                    },
+                    "data": formattedData // Use the transformed data here
+                }
+            });
+
+            // Render the map
+            map.render();
+        });
+    </script>
+

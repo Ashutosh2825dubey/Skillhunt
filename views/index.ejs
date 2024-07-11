@@ -1,0 +1,35 @@
+
+<%- include('partials/header.ejs',{title:title}) %>
+<main>
+    <div class="Dropdown">
+        <%- include('partials/dropdown.ejs', { roles: roles}) %>
+    </div>
+</main>
+
+<style>
+    body,html{
+        overflow: hidden;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 30vh; /* Ensure a minimum height for smaller screens */
+        width: 100%;
+    }
+    .Dropdown {
+        width: 50%; /* Adjust width as needed */
+        text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        main {
+            min-height: auto;
+        }
+        .Dropdown {
+            width: 80%; /* Adjust width for smaller screens */
+        }
+    }
+</style>
+
+

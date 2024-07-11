@@ -1,0 +1,70 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+      #map_div {
+        width: 50%; /* Adjust the width as needed */
+        margin-top: 40px; /* Adjust this value for space above the div */
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2 {
+        padding-top: 40px; /* Adjust this value for space above the title */
+        margin-right: 20px; 
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <h2>Location Data</h2>
+    <div id="map_div"></div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['geochart'],
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+         
+        function drawRegionsMap() {
+            var chartmapDataArray = [
+                ['State', 'Count', 'Loc_Percent'],
+                <% locations.forEach(location => { %>
+                    ['<%= location.state %>', <%= location.count %>, <%= location.loc_percent %>],
+                <% }); %>
+            ];
+            if(chartmapDataArray){
+                var chartmapData = google.visualization.arrayToDataTable(chartmapDataArray);
+
+                var options = {
+                    region: 'IN', // ISO 3166-1 alpha-2 code for India
+                    resolution: 'provinces',
+                    colorAxis: {
+                        colors: ['#00ff00', '#ff0000']
+                    }, // Green to Red gradient
+                    backgroundColor: 'grey',
+                    datalessRegionColor: 'white',
+                    defaultColor: 'green',
+                };
+                var chart = new google.visualization.GeoChart(document.getElementById('map_div'));
+                setTimeout(function() {
+                    chart.draw(chartmapData, options);
+                }, 1000);
+            }
+            else {
+                console.error("Error: No chart map data available.");
+            }
+        }
+    </script>
+</body>
+</html>

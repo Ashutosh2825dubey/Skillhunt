@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.maps.js"></script>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/maps/fusioncharts.india.js"></script>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+ 
+
+    <title>SkillHunt | <%=title%></title>
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <ul class="sidebar">
+           <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+           <li><a href="/skill_hunt/skill_wind">SkillWind</a></li>
+           <li><a href="/skill_hunt/skillfit">SkillFit</a></li>
+           <li><a href="/skill_hunt/about">About</a></li>
+        </ul>  
+
+        <ul>
+            <li class="skillhub"><a href="/">SkillHunt</a>
+                <h3 class="sub-caption"></h3>
+            </li>
+            <li class="hideOnMobile"><a href="/skill_hunt/skill_wind">SkillWind</a></li>
+            <li class="hideOnMobile"><a href="/skill_hunt/skillfit">SkillFit</a></li>
+            <li class="hideOnMobile"><a href="/skill_hunt/about">About</a></li>
+            <li  class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>   
+    </nav>
+</div>
+<script src="/js/header.js"></script>

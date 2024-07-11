@@ -1,0 +1,157 @@
+<%- include('./partials/header.ejs',{title: title}) %>
+<main>
+    <div class="big-container">
+        <div id="index">
+            <%- include('./partials/dropdown.ejs', { roles: data.roles }) %>
+        </div>
+        <div class="chart-wrapper">
+            <div id="chart-container">
+                <!-- FusionCharts chart will be rendered here -->
+            </div>
+            <div id="map">
+                <!-- Include FusionCharts map -->
+                <%- include('./fusionmap.ejs', { locations: data.locations, roleName: data.roleName }) %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; 
+    }
+    body {
+        overflow-y: scroll; 
+    }
+    main {
+        display: flex;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    .big-container {
+        width: 100%;
+        display: flex;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    #index {
+        width: 20%;
+        box-sizing: border-box;
+        height: 100vh;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .chart-wrapper {
+        display: flex;
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+    }
+    #map, #chart-container {
+        width: 50%;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    @media screen and (max-width: 800px) {
+        #index {
+            width: auto;
+            height: auto;
+        }
+        .big-container {
+            display: block;
+            box-sizing: border-box;
+            margin: auto;
+    
+        }
+        .chart-wrapper {
+            display: block;
+            width: 100%;
+            height: auto;
+           
+        }
+        #map, #chart-container {
+            width: auto;
+            height: auto;
+            box-sizing: border-box;
+            
+        }
+    }
+</style>
+
+<script>
+    var fusionData = [
+        <% data.projects.sort((a, b) => b.percentage - a.percentage); %>
+        <% data.projects.forEach(function(blog) { %>
+        {
+            label: '<%= blog.skill %>',
+            value: <%= blog.percentage %>
+        },
+        <% }); %>
+    ];
+    var top25 = fusionData.slice(0, 15);
+
+    console.log(fusionData);
+
+    FusionCharts.ready(function() {
+        var myChart = new FusionCharts({
+            type: "bar2d",
+            renderAt: "chart-container",
+            width: "90%",
+            height: "750",
+            dataFormat: "json",
+            dataSource: {
+                chart: {
+                    caption: "Top Skills For <%=data.roleName %> ",
+                    "caption position":"center",
+                    "captionFontSize": "30",
+                    numDivLines: 0,
+                    plotGradientColor: "#117A65",
+                    yAxisName: "",
+                    yAxisValueBgColor: "#17202A",
+                    aligncaptionwithcanvas: "0",
+                    plottooltext: "",
+                    theme: "candy",
+                    showAlternateVGridColor: "0",
+                    showYAxisValues: "0",
+                    showLimits: "0",
+                    yAxisLineColor: "rgba(0, 0, 0, 0)",
+                    labelFontColor: "#17202A",
+                    labelFontSize: 20,
+                    labelFontBold: 1,
+                    showValues: "0",
+                    captionFont: "Arial",
+                    captionFontColor: "#17202A",
+                    captionFontBold: "1",
+                    showBorder: "0",
+                    plotGradientColor: "",
+                    alignCaptionWithCanvas: "0",
+                    canvasBorderColor: "",
+                    showPlotBorder: "0",
+                    valueBorderColor: "",
+                    plotBorderAlpha: "0",
+                    showCanvasBorder: "0",
+                    baseFont: "roboto mono",
+                    plotToolText: "<b>$label</b>: $value%",
+                    responsive: "1",
+                    bgColor: "#FFFFFF"
+                },
+                categoryAxis: {
+                    numVisibleLabels: "",
+                },
+                data: top25.map(function(item) {
+                    return {
+                        label: item.label,
+                        value: item.value,
+                        style: {
+                            color: "#117A65"
+                        },
+                        color: "#117A65"
+                    };
+                })
+            }
+        }).render();
+    });
+</script>
