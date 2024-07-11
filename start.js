@@ -13,7 +13,7 @@ const dbURI = process.env.DB_URL  // Update with your MongoDB URI
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
+            console.log(`Server is running on ${PORT}`);
         });
     })
     .catch((err) => {
