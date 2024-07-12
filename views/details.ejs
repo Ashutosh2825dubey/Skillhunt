@@ -49,6 +49,7 @@
         width: 80%;
         height: 100vh;
         padding: 20px;
+        box-sizing: content-box;
     }
     #map, #chart-container {
         width: 50%;
@@ -63,19 +64,25 @@
         .big-container {
             display: block;
             box-sizing: border-box;
-            margin: auto;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
     
         }
         .chart-wrapper {
             display: block;
             width: 100%;
             height: auto;
+            box-sizing: content-box;
+        
            
         }
         #map, #chart-container {
-            width: auto;
+           width: auto;
             height: auto;
             box-sizing: border-box;
+            margin: auto;
+      
             
         }
     }
@@ -99,7 +106,7 @@
         var myChart = new FusionCharts({
             type: "bar2d",
             renderAt: "chart-container",
-            width: "90%",
+            width: "100%",
             height: "750",
             dataFormat: "json",
             dataSource: {
@@ -136,7 +143,9 @@
                     baseFont: "roboto mono",
                     plotToolText: "<b>$label</b>: $value%",
                     responsive: "1",
-                    bgColor: "#FFFFFF"
+                    bgColor: "#FFFFFF",
+                    canvasPadding: 0,
+                    zooming: "1"
                 },
                 categoryAxis: {
                     numVisibleLabels: "",

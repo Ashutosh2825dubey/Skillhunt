@@ -52,6 +52,7 @@ nav ul li a{
     padding: 0 10px;
     font-weight:500;
     margin-right: 2px;
+  
  
 
 
@@ -64,7 +65,7 @@ nav a:hover{
 }
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     height: 95vh;
     width: 100%;
     overflow: hidden;
@@ -159,8 +160,18 @@ button:hover{
         justify-items: right;
         padding-left: 10px;
 
-
     }
+        nav ul {
+            padding-right: 0;
+        }
+        nav ul li{
+            display:inline-block;
+            margin: 5px 0px;
+            height: 50px;
+        
+        
+        }
+    
 
 }
 @media(max-width:400px){
