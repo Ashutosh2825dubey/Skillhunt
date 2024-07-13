@@ -21,26 +21,31 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       box-sizing: border-box;
+    
     }
 
     #chart-container {
-        width: 100%; /* Use vw units for responsive width */
-        height: 90vh; /* Use vh units for responsive height */
+        width: 100%; 
+        height: 90vh; 
         display: flex;
         flex-direction: column;
         flex: 1;
         margin: auto;
+        box-sizing: border-box;
     }
 
     @media screen and (max-width: 800px) {
         main{
             width:auto;
-            box-sizing:content-box;
+            padding:5px;
+            display: block;
+         
         }
         #chart-container {
             width: 100%; /* Full width for smaller screens */
             height: auto; /* Adjust height for smaller screens */
+            box-sizing:border-box;
+            padding:0px;
         
 
         }
@@ -73,6 +78,7 @@
             renderAt: 'chart-container',
             width: '100%',
             height: '100%', // Set an appropriate height for the chart
+        
             dataFormat: 'json',
             loadMessage: "loading your data",
             dataSource: {
@@ -87,6 +93,9 @@
                     theme: 'gammel',
                     palette: 5,
                     baseFont: "Trickster",
+                    labelDistance:"1",
+                    manageLabelOverflow:1,
+                    useEllipsesWhenOverflow:1,
                     baseFontSize: 15,
                     labelFontSize: 17,
                     labelFontBold: 1,
@@ -98,7 +107,7 @@
                     enableSmartLabels: 1,
                     showLegend: '0', // Disable legend items
                     subCaptionFontColor: "#000000",
-                    responsive: '1',
+                    responsive: 1,
                     scrollBar: {
                 enabled: true
             },

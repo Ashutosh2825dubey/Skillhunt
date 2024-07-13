@@ -66,14 +66,16 @@
             box-sizing: border-box;
             align-items: center;
             justify-content: center;
-            margin-right: 5px;
+           
     
         }
         .chart-wrapper {
             display: block;
             width: 100%;
             height: auto;
-            box-sizing: content-box;
+            padding:0;
+            
+            
         
            
         }
@@ -81,7 +83,9 @@
            width: auto;
             height: auto;
             box-sizing: border-box;
-            margin: auto;
+            padding:0;
+            padding-top: 10px;
+
       
             
         }
@@ -112,7 +116,10 @@
             dataSource: {
                 chart: {
                     caption: "Top Skills For <%=data.roleName %> ",
-                    "caption position":"center",
+                    "captionPadding": "10",
+                    captionAlignment:"center",
+                    captionOnTop:1,
+                    alignCaptionWithCanvas:1,
                     "captionFontSize": "30",
                     numDivLines: 0,
                     plotGradientColor: "#117A65",
@@ -132,23 +139,28 @@
                     captionFont: "Arial",
                     captionFontColor: "#17202A",
                     captionFontBold: "1",
-                    showBorder: "0",
-                    plotGradientColor: "",
-                    alignCaptionWithCanvas: "0",
-                    canvasBorderColor: "",
+                    showBorder: 0,
+                    showcanvasborder:0,
+                    canvasBorderThickness:5,
+                    chartLeftMargin:"10",
+                    canvasTopPadding:"0",
+                    canvasBottomPadding:"0",
                     showPlotBorder: "0",
                     valueBorderColor: "",
                     plotBorderAlpha: "0",
                     showCanvasBorder: "0",
                     baseFont: "roboto mono",
                     plotToolText: "<b>$label</b>: $value%",
-                    responsive: "1",
+                    responsive: 1,
                     bgColor: "#FFFFFF",
                     canvasPadding: 0,
-                    zooming: "1"
+                    zoomEnabled: "1",
+                    scrollheight: "10",
+                    showYAxisLine:0,
+                  
                 },
                 categoryAxis: {
-                    numVisibleLabels: "",
+                    
                 },
                 data: top25.map(function(item) {
                     return {
