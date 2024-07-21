@@ -6,8 +6,8 @@ body {
 }
 
 .navbar {
-   /* Set text color of the navigation bar */
-    padding: 0px 0px; /* Add padding to the navigation bar */
+  
+    padding: 0px 0px; 
     
     
 }
@@ -24,9 +24,9 @@ body {
 }
 
 .container {
-    max-width: 1200px; /* Set a maximum width for the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 0px; /* Add padding to the container */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0px; 
     
 }
 
@@ -35,27 +35,27 @@ body {
 #map {
     width: 50%;
     height: 500px;
-    float:right;/* Add a border to the map container for visualization */
+    float:right;
     margin-top: .4%;
 }
 
 #chart-container {
-    width: 50%; /* Ensure the chart container fills the width of its parent */
+    width: 50%; 
     height:500px;
-    float:left; /* Set a fixed height for the chart */
+    float:left; 
     margin-top: .4%;
 }
 /* CSS for caption */
 .h3 {
-text-align: center; /* Align caption to center */
-font-size: 18px; /* Font size */
-color: #FFFFFF; /* Font color (white) */
-margin-top: 20px; /* Add top margin for spacing */
-position: absolute; /* Position the caption absolutely */
-top: 10px; /* Adjust top position as needed */
-left: 50%; /* Center horizontally */
-transform: translateX(-50%); /* Center horizontally */
-background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-padding: 10px; /* Add padding */
-border-radius: 5px; /* Add border radius */
+text-align: center;
+font-size: 18px;
+color: #FFFFFF;
+margin-top: 20px; 
+position: absolute; 
+top: 10px; 
+left: 50%; 
+transform: translateX(-50%); 
+background-color: rgba(0, 0, 0, 0.5); 
+padding: 10px;
+border-radius: 5px; 
 }

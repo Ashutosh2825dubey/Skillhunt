@@ -4,9 +4,9 @@
 
 }
 nav{
-  background: #1D976C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,#1D976C,#93F9B9);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1D976C,#93F9B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #1D976C;  
+  background: -webkit-linear-gradient(to right,#1D976C,#93F9B9);  
+  background: linear-gradient(to right, #1D976C,#93F9B9); 
   
   box-shadow:3px 3px 5px rgba(0,0,0,0.1);
   height: 100px;
@@ -110,16 +110,16 @@ nav li:first-child{
  
 }
 .skillhub a {
-  font-size: 3rem; /* Adjust the size as needed */
+  font-size: 3rem; 
   font-weight: bold;
   margin-top: -.5rem;
   color: black;
 }
 .sub-caption {
-  font-size: 1rem; /* Adjust the size as needed */
+  font-size: 1rem; 
   font-weight: normal;
   color: black;
-  margin-top: -2rem; /* Adjust the spacing as needed */
+  margin-top: -2rem;
 }
 .skillhub a:hover{
   color:black;

@@ -1,7 +1,7 @@
 <script>
-        // Wait for the DOM to load
+  
         document.addEventListener("DOMContentLoaded", function() {
-            // Simulated received data
+          
             var receivedData = [
                 <% locations.forEach(function(location) { %>
                     <% if (location.percentage > 0) { %>
@@ -13,20 +13,20 @@
                 <% }); %>
             ];
 
-            // Debugging: Log the received data to the console
+          
             console.log("Received Data:", receivedData);
 
-            // Convert received data into desired format
+            
             var formattedData = receivedData.map(item => ({
                 id: item.state_id, 
                 value: item.percentage,
                 showLabel: "0"
             }));
 
-            // Debugging: Log the formatted data to the console
+           
             console.log("Formatted Data:", formattedData);
 
-            // Create FusionCharts map instance
+           
             var map = new FusionCharts({
                 type: 'maps/india',
                 renderAt: 'map',
@@ -75,7 +75,7 @@
                             { "minvalue": "60", "maxvalue": "70", "color": "#008000" }
                         ]
                     },
-                    "data": formattedData // Use the transformed data here
+                    "data": formattedData 
                 }
             });
 

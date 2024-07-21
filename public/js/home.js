@@ -26,6 +26,6 @@ function hideSidebar(){
     
 };
 function navigateToPage() {
-    // Replace 'https://example.com/another-page' with the URL you want to navigate to
+   
     window.location.href = '/skill_hunt/skill_wind';
   }

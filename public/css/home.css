@@ -7,15 +7,15 @@
   
 }
 body,html{
-    overflow: hidden; /* Hide the scrollbar */
+    overflow: hidden; 
 }
 
 .container{
     width:100%;
     min-height:100vh;
-    background: #1D976C;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right,#1D976C,#93F9B9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1D976C,#93F9B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #1D976C;  
+    background: -webkit-linear-gradient(to right,#1D976C,#93F9B9);  
+    background: linear-gradient(to right, #1D976C,#93F9B9); 
     
     background-size: cover;
     background-position: center;
@@ -110,7 +110,7 @@ button{
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
-    width: 200px;      /* Increase width */
+    width: 200px;      
     height: 60px;
     font-family: 'Poppins', sans-serif;
 }
@@ -196,7 +196,7 @@ button:hover{
         font-size:.5rem;
     }
     button{
-        width: auto;      /* Increase width */
+        width: auto;      
     height: auto;
     font-size:10px;
 
@@ -226,7 +226,7 @@ button:hover{
         font-size:1rem;
     }
     button{
-        width: 100px;      /* Increase width */
+        width: 100px;      
     height: 30px;
     font-size:15px;
 

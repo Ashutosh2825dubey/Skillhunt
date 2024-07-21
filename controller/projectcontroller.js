@@ -26,7 +26,7 @@ const render_ml_form=async(req,res)=>{
 }
 const render_ml_response = async (req, res) => {
     try {
-        // Prepare the data to be sent
+        
         const data = {
             skill1: req.body.skill1.toLowerCase(),
             skill2: req.body.skill2.toLowerCase(),
@@ -55,7 +55,7 @@ const render_ml_response = async (req, res) => {
             res.render('recommender.ejs', { data: response.data ,title:'SkillFit'}); 
         }
 
-        // Send response data back to the client
+     
     
     } catch (error) {
         console.error('Error making request:', error);
