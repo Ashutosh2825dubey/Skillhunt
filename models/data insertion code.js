@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const csv = require('csv-parser');
+require('dotenv').config();
 
 // Set up express app
 const app = express();
 
 // Connect to the database
-const dbURI = 'mongodb+srv://shaun:amandubey123@nodetuts.eswobdi.mongodb.net/project?retryWrites=true&w=majority';
+const dbURI = process.env.DB_URL;
 mongoose.connect(dbURI)
   .then(() => {
  
