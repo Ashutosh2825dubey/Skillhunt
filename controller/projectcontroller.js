@@ -36,7 +36,7 @@ const render_ml_response = async (req, res) => {
         };
 
         // Send post req to url using axios
-        const response = await axios.post(process.env.ML_API, data);
+        const response = await axios.post(process.env.ML_API, data,{ timeout: 30000 });
 
         // Log the response data
         //  console.log(response.data[0].percentage);
